@@ -7,14 +7,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.Configure<ReportDbSettings>(
+builder.Services.Configure<RipStainDbSettings>(
     builder.Configuration.GetSection("ReportDatabase"));
-builder.Services.Configure<FoodItemDbSettings>(
-    builder.Configuration.GetSection("ReportDatabase"));
+/* builder.Services.Configure<FoodItemDbSettings>(
+    builder.Configuration.GetSection("ReportDatabase")); */
 
 
 builder.Services.AddSingleton<ReportService>();
 builder.Services.AddSingleton<FoodItemService>();
+builder.Services.AddSingleton<VerifiedReportService>();
 
 builder.Services.AddControllers();
 builder.Services.AddCors(

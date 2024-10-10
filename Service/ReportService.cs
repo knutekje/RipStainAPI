@@ -9,7 +9,7 @@ public class ReportService {
     private readonly IMongoCollection<Report> _reports;
 
     public ReportService(
-        IOptions<ReportDbSettings> reportDbSettings){
+        IOptions<RipStainDbSettings> reportDbSettings){
             var mongoClient = new MongoClient(
                 reportDbSettings.Value.ConnectionString);
 

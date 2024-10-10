@@ -6,7 +6,7 @@ public class FoodItemService{
     private readonly IMongoCollection<FoodItem> _fooditems;
 
     public FoodItemService (
-        IOptions<FoodItemDbSettings> fooditemDbSettings){
+        IOptions<RipStainDbSettings> fooditemDbSettings){
         var mongoClient = new MongoClient(
             fooditemDbSettings.Value.ConnectionString);
 
