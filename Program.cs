@@ -9,14 +9,20 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.Configure<ReportDbSettings>(
     builder.Configuration.GetSection("ReportDatabase"));
+builder.Services.Configure<FoodItemDbSettings>(
+    builder.Configuration.GetSection("ReportDatabase"));
+
 
 builder.Services.AddSingleton<ReportService>();
+builder.Services.AddSingleton<FoodItemService>();
+
 builder.Services.AddControllers();
 builder.Services.AddCors(
     options => {
         options.AddDefaultPolicy(
             builder => {
                 builder.AllowAnyOrigin();
+                builder.AllowAnyHeader();
             });
     }
 );

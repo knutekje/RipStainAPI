@@ -23,16 +23,17 @@ public class ReportService {
             await _reports.Find(_ => true).ToListAsync();
 
         public async Task<Report?> GetAsync(string id) =>
-            await _reports.Find(x => (x._id).ToString() == id).FirstOrDefaultAsync();
+            await _reports.Find(x => x.Id.ToString() == id).FirstOrDefaultAsync();
+
 
         public async Task CreateAsync(Report report) =>
             await _reports.InsertOneAsync(report);
 
         public async Task UpdateAsync(string id, Report reportIn) =>
-            await _reports.ReplaceOneAsync(x => (x._id).ToString() == id, reportIn);
+            await _reports.ReplaceOneAsync(x => (x.Id).ToString() == id, reportIn);
 
         public async Task RemoveAsync(string id) =>
-            await _reports.DeleteOneAsync(x => (x._id).ToString() == id);
+            await _reports.DeleteOneAsync(x => (x.Id).ToString() == id);
     }
     
     

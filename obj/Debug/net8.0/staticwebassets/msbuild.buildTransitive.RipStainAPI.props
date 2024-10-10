@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="../buildMultiTargeting/RipStainAPI.props" />
+  <Import Project="..\buildMultiTargeting\RipStainAPI.props" />
 </Project>

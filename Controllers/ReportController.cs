@@ -12,14 +12,18 @@ public class ReportController : ControllerBase{
     public ReportController(ReportService reportService){
         _reportService = reportService;
     }
+    
+    
 
     [HttpGet]
     public async Task<List<Report>> Get() =>
         await _reportService.GetAsync();
+
+        
     [HttpPost]
     public async Task<IActionResult> Post(Report report){
         await _reportService.CreateAsync(report);
-        return CreatedAtAction(nameof(Get), new {id = report._id}, report);
+        return CreatedAtAction(nameof(Get), new {id = report.Id}, report);
     }
     
 
