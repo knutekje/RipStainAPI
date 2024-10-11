@@ -1,24 +1,16 @@
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-WORKDIR /app
-EXPOSE 5172
+FROM mcr.microsoft.com/dotnet/sdk:8.0@sha256:35792ea4ad1db051981f62b313f1be3b46b1f45cadbaa3c288cd0d3056eefb83 AS build-env
+WORKDIR /App
 
-ENV ASPNETCORE_URLS=http://+:5172
+# Copy everything
+COPY . ./
+# Restore as distinct layers
+RUN dotnet restore
+# Build and publish a release
+RUN dotnet publish -c Release -o out
 
-USER app
-FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-ARG configuration=Release
-WORKDIR /src
-COPY ["RipStainAPI.csproj", "./"]
-RUN dotnet restore "RipStainAPI.csproj"
-COPY . .
-WORKDIR "/src/."
-RUN dotnet build "RipStainAPI.csproj" -c $configuration -o /app/build
+EXPOSE 8080
 
-FROM build AS publish
-ARG configuration=Release
-RUN dotnet publish "RipStainAPI.csproj" -c $configuration -o /app/publish /p:UseAppHost=false
-
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app/publish .
+FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:6c4df091e4e531bb93bdbfe7e7f0998e7ced344f54426b7e874116a3dc3233ff
+WORKDIR /App
+COPY --from=build-env /App/out .
 ENTRYPOINT ["dotnet", "RipStainAPI.dll"]
