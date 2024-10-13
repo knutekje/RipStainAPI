@@ -12,7 +12,7 @@ public class FoodItem {
     */
     [BsonRepresentation(BsonType.ObjectId)]
     [BsonId(IdGenerator = typeof(ObjectIdGenerator))]
-    public ObjectId Id { get; set; }
+    public string Id { get; set; }
 
     [BsonElement("itemnr")] 
     public required int Itemnr { get; set; }

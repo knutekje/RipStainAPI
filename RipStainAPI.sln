@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RipStainAPI", "RipStainAPI.csproj", "{E3410695-1A31-4423-B73C-80BC6D184F62}"
 EndProject
-Global
+
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -15,6 +15,18 @@ Global
 		{E3410695-1A31-4423-B73C-80BC6D184F62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3410695-1A31-4423-B73C-80BC6D184F62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3410695-1A31-4423-B73C-80BC6D184F62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{174819A5-D24B-4502-9270-346CE74BACD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{174819A5-D24B-4502-9270-346CE74BACD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{174819A5-D24B-4502-9270-346CE74BACD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{174819A5-D24B-4502-9270-346CE74BACD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A1FB432-3353-4631-A7A1-4469B04667BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A1FB432-3353-4631-A7A1-4469B04667BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A1FB432-3353-4631-A7A1-4469B04667BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A1FB432-3353-4631-A7A1-4469B04667BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9BCBC13-E22D-4DA4-A835-B8C3D6F3ECA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9BCBC13-E22D-4DA4-A835-B8C3D6F3ECA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9BCBC13-E22D-4DA4-A835-B8C3D6F3ECA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9BCBC13-E22D-4DA4-A835-B8C3D6F3ECA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
