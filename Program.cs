@@ -22,6 +22,7 @@ builder.Services.AddCors(
     options => {
         options.AddDefaultPolicy(
             builder => {
+                builder.AllowAnyMethod();
                 builder.AllowAnyOrigin();
                 builder.AllowAnyHeader();
             });
@@ -31,12 +32,12 @@ builder.Services.AddCors(
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+
 app.UseCors();
 app.MapControllers();
 app.UseHttpsRedirection();
 app.Run();
+

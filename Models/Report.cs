@@ -5,10 +5,10 @@ using MongoDB.Bson.Serialization.IdGenerators;
 namespace RipStainAPI;
 
 public class Report{
-    //[BsonId]
+    
+    [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
-    [BsonId(IdGenerator = typeof(ObjectIdGenerator))]
-    public string Id { get; set; }
+    public string? Id { get; set; }
     
     [BsonElement("itemName")]
     public required string ItemName { get; set; }
