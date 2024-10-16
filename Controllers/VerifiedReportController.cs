@@ -24,11 +24,11 @@ public class VerifiedReportController : ControllerBase{
     }
 
     [HttpGet("/stats/")]
-    public void AnnualMonthly(DateTimeOffset date){
-        _verifiedReportService.ReportsMonthlyYearl(date);
-
+    public async void AnnualMonthly()
+    {
+        _verifiedReportService.TopTenReported();
     }
+}
         
 
 
-}

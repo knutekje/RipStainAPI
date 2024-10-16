@@ -8,8 +8,8 @@ public class VerifiedReport () {
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
 
-    [BsonElement("foodItem")]
-    public required FoodItem FoodItem { get; set; }
+    [BsonElement("foodItemId")]
+    public required string FoodItemId { get; set; }
 
     [BsonElement("quantity")]
     public double Quantity { get; set; }

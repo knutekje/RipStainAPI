@@ -41,7 +41,7 @@ public class VerifiedReportService
     {
         VerifiedReport verifiedReport = new()
         {
-            FoodItem = foodItem,
+            FoodItemId = foodItem.Id,
             Quantity = report.Quantity,
             Value = (double)(report.Quantity * foodItem.ItemPrice),
             ReportedTime = report.ReportedTime
@@ -57,22 +57,20 @@ public class VerifiedReportService
     Monthy and yearly
     */
 
-    public void ReportsMonthlyYearl(DateTimeOffset date){
-        var queryableCollection = _verifiedreports.AsQueryable();
-        var query = queryableCollection
-        .Where(report => report.ReportedTime.ToString("yyyy") == "2024");
-
-        foreach(var item in query){
-            System.Console.WriteLine(item);
-        }
-        
-
+    public void ReportsMonthlyYearl(){
+        // NOT IMPLEMENTED
     }
 
-    
- 
+  
+    public void TopTenReported(){
+   
+      // NOT IMPLEMENTED
 
+    } 
 
+    /* Most represented  department
+         count OCCURSENCE per departments
+     */ 
     #endregion
 }
        

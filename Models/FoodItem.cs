@@ -14,9 +14,6 @@ public class FoodItem {
     [BsonId(IdGenerator = typeof(ObjectIdGenerator))]
     public string Id { get; set; }
 
-    [BsonElement("itemnr")] 
-    public required int Itemnr { get; set; }
-
     [BsonElement("itemName")] 
     public string? ItemName { get; set; }
 
