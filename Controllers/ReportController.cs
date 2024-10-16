@@ -22,6 +22,7 @@ public class ReportController : ControllerBase {
 
     [HttpPost]
     public async Task<IActionResult> Post(Report report) {
+        report.ReportedTime = DateTime.Now;
         await _reportService.CreateAsync(report);
         return CreatedAtAction(nameof(Get), new { id = report.Id }, report);
     }

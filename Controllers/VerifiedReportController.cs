@@ -19,7 +19,16 @@ public class VerifiedReportController : ControllerBase{
     [HttpPost]
     public async void Post(VerifiedDTO verifiedDTO)
     {
-        await _verifiedReportService.VerifyReportAsync(verifiedDTO.foodItem, verifiedDTO.report);
+        await _verifiedReportService.VerifyReportAsync(verifiedDTO.report, verifiedDTO.foodItem);
 
     }
+
+    [HttpGet("/stats/")]
+    public void AnnualMonthly(DateTimeOffset date){
+        _verifiedReportService.ReportsMonthlyYearl(date);
+
+    }
+        
+
+
 }

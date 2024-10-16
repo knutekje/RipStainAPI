@@ -34,6 +34,12 @@ public class ReportService {
 
         public async Task RemoveAsync(string id) =>
             await _reports.DeleteOneAsync(x => (x.Id).ToString() == id);
+
+        public void FudgeLinqGet(){
+        var queryCollection = _reports.AsQueryable();
+        
+            
+        }
     }
     
     

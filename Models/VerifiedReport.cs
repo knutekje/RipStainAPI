@@ -17,6 +17,9 @@ public class VerifiedReport () {
     [BsonElement("value")]
     public double Value { get; set; }
 
+    [BsonElement("deparment")]
+    public string? Department { get; set; }
+
     [BsonElement("reportedTime")]
     public DateTimeOffset ReportedTime { get; set; }
 
