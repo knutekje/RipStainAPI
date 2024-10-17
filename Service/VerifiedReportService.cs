@@ -7,12 +7,17 @@ using System.Text.Json;
 using MongoDB.Driver.Linq;
 using Microsoft.AspNetCore.Http.Features;
 using MongoDB.Bson;
+using System.Security.Cryptography.X509Certificates;
 
 namespace RipStainAPI.Services;
 
 public class VerifiedReportService
 {
     private readonly IMongoCollection<VerifiedReport> _verifiedreports;
+    private readonly IMongoCollection<FoodItem> _fooditems;
+
+
+    
 
     public VerifiedReportService(
         IOptions<RipStainDbSettings> reportDbSettings)
@@ -25,6 +30,11 @@ public class VerifiedReportService
 
         _verifiedreports = mongoDatabase.GetCollection<VerifiedReport>(
             reportDbSettings.Value.VerifiedReportsCollection);
+
+        _fooditems = mongoDatabase.GetCollection<FoodItem>(
+            reportDbSettings.Value.FoodItemsCollection);
+
+        
     }
     public async Task<List<VerifiedReport>> GetAsync() =>
             await _verifiedreports.Find(_ => true).ToListAsync();
@@ -57,16 +67,54 @@ public class VerifiedReportService
     Monthy and yearly
     */
 
-    public void ReportsMonthlyYearl(){
-        // NOT IMPLEMENTED
+    public async Task<List<VerifiedReport>> ReportsMonthlyYearl(int year)
+    {
+
+
+        DateTimeOffset startDate = new DateTime(year, 1, 1);
+        DateTimeOffset endDate = new DateTime(year + 1, 1, 1);
+
+        var filter = Builders<VerifiedReport>.Filter.Gte(x => x.ReportedTime, startDate)
+                    & Builders<VerifiedReport>.Filter.Lt(x => x.ReportedTime, endDate);
+        var response = await _verifiedreports.Find(filter).ToListAsync();
+
+
+        return response;
     }
 
-  
-    public void TopTenReported(){
-   
-      // NOT IMPLEMENTED
 
-    } 
+
+
+
+
+
+    public Task<List<TopItemDTO>> TopTenReported() {
+        var queryableCollection = _verifiedreports.AsQueryable();
+
+
+        var groupedItems = queryableCollection
+            .GroupBy(item => item.FoodItemId)
+            .Select(group => new TopItemDTO
+            {
+                FoodItemId = group.Key,
+                ItemName = "MINGERS",
+                SumValue = group.Sum(item => item.Value)
+            });
+
+          
+        return groupedItems.ToListAsync();
+
+
+        }
+
+
+
+    public  string FindName(string key)
+        {
+        //var saus = _fooditems.Find(x => x.Id == key).First().ItemName;
+        return key;
+        }
+       
 
     /* Most represented  department
          count OCCURSENCE per departments

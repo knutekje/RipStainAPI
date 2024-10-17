@@ -21,6 +21,7 @@ public class VerifiedReport () {
     public string? Department { get; set; }
 
     [BsonElement("reportedTime")]
+    [BsonRepresentation(BsonType.DateTime)]
     public DateTimeOffset ReportedTime { get; set; }
 
 

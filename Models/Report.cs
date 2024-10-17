@@ -16,7 +16,9 @@ public class Report{
     public string? Description { get; set; }
     [BsonElement("quantity")]
     public double Quantity {get; set;}
+
     [BsonElement("reportedTime")]
+    [BsonRepresentation(BsonType.DateTime)]
     public DateTimeOffset ReportedTime { get; set; }
 }
 

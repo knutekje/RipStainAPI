@@ -5,10 +5,12 @@ using RipStainAPI.Services;
 
 [ApiController]
 [Route("[controller]")]
-public class VerifiedReportController : ControllerBase{
+public class VerifiedReportController : ControllerBase
+{
     private readonly VerifiedReportService _verifiedReportService;
 
-    public VerifiedReportController(VerifiedReportService verifiedReportService){
+    public VerifiedReportController(VerifiedReportService verifiedReportService)
+    {
         _verifiedReportService = verifiedReportService;
     }
 
@@ -23,12 +25,17 @@ public class VerifiedReportController : ControllerBase{
 
     }
 
-    [HttpGet("/stats/")]
-    public async void AnnualMonthly()
-    {
-        _verifiedReportService.TopTenReported();
-    }
+    [HttpGet("/stats/topten/")]
+    public async Task<List<TopItemDTO>> TopTenReported() =>
+        await _verifiedReportService.TopTenReported();
+    
 }
-        
+
+    /* [HttpGet("/stats/TimeSpanStats/")]
+    public async Task AnnualMonthlyAsync(int year) =>
+
+         _verifiedReportService.ReportsMonthlyYearl();         
+    }
+     */
 
 
