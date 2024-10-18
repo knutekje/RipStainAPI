@@ -10,6 +10,9 @@ public class VerifiedReport () {
 
     [BsonElement("foodItemId")]
     public required string FoodItemId { get; set; }
+    
+    [BsonElement("foodItemName")]
+    public required string FoodItemName { get; set; }
 
     [BsonElement("quantity")]
     public double Quantity { get; set; }

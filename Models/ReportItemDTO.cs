@@ -1,4 +1,4 @@
-public class TopItemDTO(){
+public class ReportItemDTO(){
 
    
     public required string FoodItemId { get; set; }

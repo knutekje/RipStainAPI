@@ -10,7 +10,7 @@ using MongoDB.Bson;
 using System.Security.Cryptography.X509Certificates;
 
 namespace RipStainAPI.Services;
-
+ public delegate string Reverse(string s);
 public class VerifiedReportService
 {
     private readonly IMongoCollection<VerifiedReport> _verifiedreports;
@@ -52,6 +52,7 @@ public class VerifiedReportService
         VerifiedReport verifiedReport = new()
         {
             FoodItemId = foodItem.Id,
+            FoodItemName = foodItem.ItemName,
             Quantity = report.Quantity,
             Value = (double)(report.Quantity * foodItem.ItemPrice),
             ReportedTime = report.ReportedTime
@@ -63,41 +64,33 @@ public class VerifiedReportService
 
     #region Analysis methodds
 
-    /*
-    Monthy and yearly
-    */
-
-    public async Task<List<VerifiedReport>> ReportsMonthlyYearl(int year)
+    public async Task<List<ReportItemDTO>> TimeSpanReport(string date)
     {
 
+        var queryableCollection = _verifiedreports.AsQueryable();
+         var groupedItems = queryableCollection
+            .GroupBy(item => item.FoodItemId)
+            .Select(report => new 
+            {
+                FoodItemId = report.Key, 
+                ItemName = "GOD DAMN IT",
+                SumValue = group.Sum(item => item.Value)
+            });
 
-        DateTimeOffset startDate = new DateTime(year, 1, 1);
-        DateTimeOffset endDate = new DateTime(year + 1, 1, 1);
 
-        var filter = Builders<VerifiedReport>.Filter.Gte(x => x.ReportedTime, startDate)
-                    & Builders<VerifiedReport>.Filter.Lt(x => x.ReportedTime, endDate);
-        var response = await _verifiedreports.Find(filter).ToListAsync();
-
-
-        return response;
+        return groupedItems.ToListAsync();
     }
 
-
-
-
-
-
-
-    public Task<List<TopItemDTO>> TopTenReported() {
+    public Task<List<ReportItemDTO>> TopTenReported() {
         var queryableCollection = _verifiedreports.AsQueryable();
 
 
         var groupedItems = queryableCollection
             .GroupBy(item => item.FoodItemId)
-            .Select(group => new TopItemDTO
+            .Select(group => new ReportItemDTO
             {
                 FoodItemId = group.Key,
-                ItemName = "MINGERS",
+                ItemName = "item => item.FoodItemName",
                 SumValue = group.Sum(item => item.Value)
             });
 
@@ -106,19 +99,27 @@ public class VerifiedReportService
 
 
         }
+    public Task<ReportItemDTO> ReportByDepartment(){
 
+        var queryableCollection = _verifiedreports.AsQueryable();
+        var groupedItems = queryableCollection
+            .GroupBy(item => item.Department)
+            .Select(group => new ReportItemDTO
+            {
+                FoodItemId = group.Key,
+                ItemName = (item => item.Department),
+                SumValue = group.Sum(item => item.Value)
+                
+            });
 
+          
+        return groupedItems.ToListAsync();
+        
+    }
 
-    public  string FindName(string key)
-        {
-        //var saus = _fooditems.Find(x => x.Id == key).First().ItemName;
-        return key;
-        }
-       
+   
 
-    /* Most represented  department
-         count OCCURSENCE per departments
-     */ 
+   
     #endregion
 }
        
