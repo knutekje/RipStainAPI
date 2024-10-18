@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\knute\\Code\\RipStainAPI\\RipStainAPI.csproj": {}
+    "/home/knutekje/runcode/RipStainAPI/RipStainAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\knute\\Code\\RipStainAPI\\RipStainAPI.csproj": {
+    "/home/knutekje/runcode/RipStainAPI/RipStainAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\knute\\Code\\RipStainAPI\\RipStainAPI.csproj",
+        "projectUniqueName": "/home/knutekje/runcode/RipStainAPI/RipStainAPI.csproj",
         "projectName": "RipStainAPI",
-        "projectPath": "C:\\Users\\knute\\Code\\RipStainAPI\\RipStainAPI.csproj",
-        "packagesPath": "C:\\Users\\knute\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\knute\\Code\\RipStainAPI\\obj\\",
+        "projectPath": "/home/knutekje/runcode/RipStainAPI/RipStainAPI.csproj",
+        "packagesPath": "/home/knutekje/.nuget/packages/",
+        "outputPath": "/home/knutekje/runcode/RipStainAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\knute\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/knutekje/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -91,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
