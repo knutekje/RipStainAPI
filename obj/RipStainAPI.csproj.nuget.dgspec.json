@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/knutekje/runcode/RipStainAPI/RipStainAPI.csproj": {}
+    "C:\\Users\\knute\\Code\\RipStainAPI\\RipStainAPI.csproj": {}
   },
   "projects": {
-    "/home/knutekje/runcode/RipStainAPI/RipStainAPI.csproj": {
+    "C:\\Users\\knute\\Code\\RipStainAPI\\RipStainAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/knutekje/runcode/RipStainAPI/RipStainAPI.csproj",
+        "projectUniqueName": "C:\\Users\\knute\\Code\\RipStainAPI\\RipStainAPI.csproj",
         "projectName": "RipStainAPI",
-        "projectPath": "/home/knutekje/runcode/RipStainAPI/RipStainAPI.csproj",
-        "packagesPath": "/home/knutekje/.nuget/packages/",
-        "outputPath": "/home/knutekje/runcode/RipStainAPI/obj/",
+        "projectPath": "C:\\Users\\knute\\Code\\RipStainAPI\\RipStainAPI.csproj",
+        "packagesPath": "C:\\Users\\knute\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\knute\\Code\\RipStainAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/knutekje/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\knute\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -43,6 +43,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AWSSDK.SecurityToken": {
+              "target": "Package",
+              "version": "[3.7.400.36, )"
+            },
             "Microsoft.AspNetCore.Mvc.Testing": {
               "target": "Package",
               "version": "[8.0.10, )"
@@ -91,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

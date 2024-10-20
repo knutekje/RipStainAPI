@@ -64,7 +64,7 @@ public class VerifiedReportService
 
     #region Analysis methodds
 
-    public Task<List<ReportItemDTO>> TimeSpanReport(string date)
+    /* public Task<List<ReportItemDTO>> TimeSpanReport(string date)
     {
 
         var queryableCollection = _verifiedreports.AsQueryable();
@@ -85,7 +85,7 @@ public class VerifiedReportService
 
 
         return reports.ToListAsync();
-    }
+    } */
 
     public Task<List<ReportItemDTO>> TopTenReported() {
 
@@ -94,11 +94,9 @@ public class VerifiedReportService
             .GroupBy(item => new{
                 item.FoodItemName,
                 item.Value,
-                item.FoodItemId
             })
             .Select(report => new ReportItemDTO
             {
-                FoodItemId = report.Key.FoodItemId,
                 ItemName = report.Key.FoodItemName,
                 SumValue = report.Sum(report => report.Value)
             });
@@ -109,25 +107,23 @@ public class VerifiedReportService
 
 
         }
-    public Task<ReportItemDTO> ReportByDepartment(){
+    public Task<List<ReportItemDTO>> ReportByDepartment(){
 
         var queryableCollection = _verifiedreports.AsQueryable();
         var reports = queryableCollection
             .GroupBy(item => new{
-                item.FoodItemName,
-                item.Value,
-                item.FoodItemId
+                item.Department
+                
             })
             .Select(report => new ReportItemDTO
             {
-                FoodItemId = report.Key.FoodItemId,
-                ItemName = report.Key.FoodItemName,
+                ItemName = report.Key.Department,
                 SumValue = report.Sum(report => report.Value)
             });
 
 
           
-        return (Task<ReportItemDTO>)reports;
+        return reports.ToListAsync();
         
     }
 

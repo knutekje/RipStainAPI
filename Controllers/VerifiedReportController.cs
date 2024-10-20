@@ -29,6 +29,9 @@ public class VerifiedReportController : ControllerBase
     public async Task<List<ReportItemDTO>> TopTenReported() =>
         await _verifiedReportService.TopTenReported();
     
+    [HttpGet("/stats/department/")]
+    public async Task<List<ReportItemDTO>> ByDepartment() =>
+        await _verifiedReportService.ReportByDepartment();
 }
 
     /* [HttpGet("/stats/TimeSpanStats/")]
