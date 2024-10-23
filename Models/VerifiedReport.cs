@@ -21,7 +21,7 @@ public class VerifiedReport () {
     public double Value { get; set; }
 
     [BsonElement("deparment")]
-    public string? Department { get; set; }
+    public required string Department { get; set; }
 
     [BsonElement("reportedTime")]
     [BsonRepresentation(BsonType.DateTime)]

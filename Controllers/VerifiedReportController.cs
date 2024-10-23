@@ -26,19 +26,15 @@ public class VerifiedReportController : ControllerBase
     }
 
     [HttpGet("/stats/topten/")]
-    public async Task<List<ReportItemDTO>> TopTenReported() =>
-        await _verifiedReportService.TopTenReported();
-    
+    public async Task<List<ReportItemDTO>> TopTenReported(int year = 2024, int month = 1) =>
+        await _verifiedReportService.TopTenReported(year, month);
+
     [HttpGet("/stats/department/")]
-    public async Task<List<ReportItemDTO>> ByDepartment() =>
-        await _verifiedReportService.ReportByDepartment();
+    public async Task<List<ReportItemDTO>> ByDepartment(int year = 2024, int month = 1) =>
+        await _verifiedReportService.ReportByDepartment(year, month);
+
 }
-
-    /* [HttpGet("/stats/TimeSpanStats/")]
-    public async Task AnnualMonthlyAsync(int year) =>
-
-         _verifiedReportService.ReportsMonthlyYearl();         
-    }
-     */
+    
+    
 
 

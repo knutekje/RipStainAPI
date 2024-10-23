@@ -16,6 +16,10 @@ public class Report{
     [BsonElement("description")]
     public string? Description { get; set; }
     
+    [BsonElement("department")]
+    public string? Department { get; set; }
+    
+
     [BsonElement("quantity")]
     public double Quantity {get; set;}
 

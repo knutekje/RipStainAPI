@@ -16,6 +16,7 @@ builder.Services.Configure<RipStainDbSettings>(
 builder.Services.AddSingleton<ReportService>();
 builder.Services.AddSingleton<FoodItemService>();
 builder.Services.AddSingleton<VerifiedReportService>();
+builder.Services.AddSingleton<UploadService>();
 
 builder.Services.AddControllers();
 builder.Services.AddCors(

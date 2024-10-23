@@ -1,13 +1,8 @@
 using RipStainAPI.Models;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.Json;
 using MongoDB.Driver.Linq;
-using Microsoft.AspNetCore.Http.Features;
-using MongoDB.Bson;
-using System.Security.Cryptography.X509Certificates;
+
 
 namespace RipStainAPI.Services;
  public delegate string Reverse(string s);
@@ -52,6 +47,7 @@ public class VerifiedReportService
         VerifiedReport verifiedReport = new()
         {
             FoodItemId = foodItem.Id,
+            Department = report.Department,
             FoodItemName = foodItem.ItemName,
             Quantity = report.Quantity,
             Value = (double)(report.Quantity * foodItem.ItemPrice),
@@ -64,52 +60,44 @@ public class VerifiedReportService
 
     #region Analysis methodds
 
-    /* public Task<List<ReportItemDTO>> TimeSpanReport(string date)
-    {
+     public IMongoQueryable<VerifiedReport> TimeSpanReport(int date, int month){
 
-        var queryableCollection = _verifiedreports.AsQueryable();
+        var collection = _verifiedreports.AsQueryable();
+
+        // Define your date range using DateTimeOffset
+        DateTimeOffset startDate = new DateTimeOffset(date, month, 1, 0, 0, 0, TimeSpan.Zero);
+        DateTimeOffset endDate = new DateTimeOffset(date, month + 1, 1, 23, 59, 59, TimeSpan.Zero);
+
+        // LINQ query to filter documents within the time frame
+        var results = collection
+                .AsQueryable()
+                .Where(doc => doc.ReportedTime >= startDate && doc.ReportedTime <= endDate);
+                
+
+        return (IMongoQueryable<VerifiedReport>)results; 
+    } 
+
+    public Task<List<ReportItemDTO>> TopTenReported(int year, int month) {
+
+        var queryableCollection = TimeSpanReport(year, month);
+
         var reports = queryableCollection
-            .GroupBy(item => new{
-                item.FoodItemName,
-                item.Value,
-                item.FoodItemId
-            })
+            .GroupBy(item => item.FoodItemName)
+            
             .Select(report => new ReportItemDTO
             {
-                FoodItemId = report.Key.FoodItemId,
-                ItemName = report.Key.FoodItemName,
+                ItemName = report.Key,
                 SumValue = report.Sum(report => report.Value)
-            });
-
-          
-
-
-        return reports.ToListAsync();
-    } */
-
-    public Task<List<ReportItemDTO>> TopTenReported() {
-
-        var queryableCollection = _verifiedreports.AsQueryable();
-        var reports = queryableCollection
-            .GroupBy(item => new{
-                item.FoodItemName,
-                item.Value,
-            })
-            .Select(report => new ReportItemDTO
-            {
-                ItemName = report.Key.FoodItemName,
-                SumValue = report.Sum(report => report.Value)
-            });
+            }).OrderByDescending(x => x.SumValue);
 
 
           
         return reports.ToListAsync();
-
-
         }
-    public Task<List<ReportItemDTO>> ReportByDepartment(){
 
-        var queryableCollection = _verifiedreports.AsQueryable();
+    public Task<List<ReportItemDTO>> ReportByDepartment(int year, int month){
+
+        var queryableCollection = TimeSpanReport(year, month);
         var reports = queryableCollection
             .GroupBy(item => new{
                 item.Department

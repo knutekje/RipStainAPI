@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RipStainAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e1ed2a12b4f7762636ddfdfeea8c93ff3daa3a20")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66888091d00e1edda9d2eb1d18a1ded363e0995d")]
 [assembly: System.Reflection.AssemblyProductAttribute("RipStainAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RipStainAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
