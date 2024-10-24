@@ -9,8 +9,8 @@ namespace RipStainAPI.Services;
 public class VerifiedReportService
 {
     private readonly IMongoCollection<VerifiedReport> _verifiedreports;
-    private readonly IMongoCollection<FoodItem> _fooditems;
-
+/*     private readonly IMongoCollection<FoodItem> _fooditems;
+ */
 
     
 
@@ -26,8 +26,8 @@ public class VerifiedReportService
         _verifiedreports = mongoDatabase.GetCollection<VerifiedReport>(
             reportDbSettings.Value.VerifiedReportsCollection);
 
-        _fooditems = mongoDatabase.GetCollection<FoodItem>(
-            reportDbSettings.Value.FoodItemsCollection);
+    /*     _fooditems = mongoDatabase.GetCollection<FoodItem>(
+            reportDbSettings.Value.FoodItemsCollection); */
 
         
     }

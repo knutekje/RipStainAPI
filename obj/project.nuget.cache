@@ -1,12 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "oc52ShBQ+KY=",
+  "dgSpecHash": "5ICMjrW+FKc=",
   "success": true,
   "projectFilePath": "C:\\Users\\knute\\Code\\RipStainAPI\\RipStainAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\knute\\.nuget\\packages\\awssdk.core\\3.7.400.36\\awssdk.core.3.7.400.36.nupkg.sha512",
     "C:\\Users\\knute\\.nuget\\packages\\awssdk.securitytoken\\3.7.400.36\\awssdk.securitytoken.3.7.400.36.nupkg.sha512",
     "C:\\Users\\knute\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
+    "C:\\Users\\knute\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\8.0.10\\microsoft.aspnetcore.authentication.google.8.0.10.nupkg.sha512",
+    "C:\\Users\\knute\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
+    "C:\\Users\\knute\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\knute\\.nuget\\packages\\microsoft.aspnetcore.http.extensions\\2.2.0\\microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",
+    "C:\\Users\\knute\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\knute\\.nuget\\packages\\microsoft.aspnetcore.mvc.testing\\8.0.10\\microsoft.aspnetcore.mvc.testing.8.0.10.nupkg.sha512",
     "C:\\Users\\knute\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.8\\microsoft.aspnetcore.openapi.8.0.8.nupkg.sha512",
     "C:\\Users\\knute\\.nuget\\packages\\microsoft.aspnetcore.testhost\\8.0.10\\microsoft.aspnetcore.testhost.8.0.10.nupkg.sha512",
@@ -41,6 +46,7 @@
     "C:\\Users\\knute\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\knute\\.nuget\\packages\\microsoft.ml.onnxruntime\\1.19.2\\microsoft.ml.onnxruntime.1.19.2.nupkg.sha512",
     "C:\\Users\\knute\\.nuget\\packages\\microsoft.ml.onnxruntime.managed\\1.19.2\\microsoft.ml.onnxruntime.managed.1.19.2.nupkg.sha512",
+    "C:\\Users\\knute\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "C:\\Users\\knute\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\knute\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
     "C:\\Users\\knute\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
@@ -51,6 +57,7 @@
     "C:\\Users\\knute\\.nuget\\packages\\mongodb.libmongocrypt\\1.12.0\\mongodb.libmongocrypt.1.12.0.nupkg.sha512",
     "C:\\Users\\knute\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
     "C:\\Users\\knute\\.nuget\\packages\\snappier\\1.0.0\\snappier.1.0.0.nupkg.sha512",
+    "C:\\Users\\knute\\.nuget\\packages\\spectre.console\\0.49.1\\spectre.console.0.49.1.nupkg.sha512",
     "C:\\Users\\knute\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\knute\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\knute\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
@@ -62,6 +69,7 @@
     "C:\\Users\\knute\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
     "C:\\Users\\knute\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
     "C:\\Users\\knute\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
+    "C:\\Users\\knute\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
     "C:\\Users\\knute\\.nuget\\packages\\zstdsharp.port\\0.7.3\\zstdsharp.port.0.7.3.nupkg.sha512"
   ],
   "logs": []

@@ -815,3 +815,5 @@ C:\Users\knute\Code\RipStainAPI\obj\Debug\net8.0\refint\RipStainAPI.dll
 C:\Users\knute\Code\RipStainAPI\obj\Debug\net8.0\RipStainAPI.pdb
 C:\Users\knute\Code\RipStainAPI\obj\Debug\net8.0\RipStainAPI.genruntimeconfig.cache
 C:\Users\knute\Code\RipStainAPI\obj\Debug\net8.0\ref\RipStainAPI.dll
+C:\Users\knute\Code\RipStainAPI\bin\Debug\net8.0\Spectre.Console.dll
+C:\Users\knute\Code\RipStainAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll

@@ -1,9 +1,12 @@
 using RipStainAPI.Models;
 using RipStainAPI.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RipStainAPI.Controllers;
 
+
+[Authorize]
 [ApiController]
 [Route("[controller]")]
 public class ReportController : ControllerBase {

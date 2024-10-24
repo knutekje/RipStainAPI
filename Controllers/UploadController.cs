@@ -6,7 +6,7 @@ using MongoDB.Bson;
 namespace RipStainAPI.Controllers;
 
 
-[Route("api/[controller]")]
+[Route("[controller]")]
 [ApiController]
 public class UploadController: ControllerBase {
     public readonly UploadService _uploadService;

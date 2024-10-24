@@ -1,8 +1,9 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RipStainAPI.Models;
 using RipStainAPI.Services;
  
-
+[Authorize]
 [ApiController]
 [Route("[controller]")]
 public class FoodItemController : ControllerBase {
