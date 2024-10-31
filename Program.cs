@@ -4,6 +4,7 @@ using RipStainAPI;
 using RipStainAPI.Models;
 using RipStainAPI.Services;
 using static RipStainAPI.SpectreConsoleLoggerProvider;
+using Microsoft.AspNetCore.Http.Features;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.Configure<RipStainDbSettings>(
     builder.Configuration.GetSection("ReportDatabase"));
+
+
+
+ builder.Services.Configure<FormOptions>(options =>
+    {
+        options.MultipartBodyLengthLimit = 104857600; 
+    });
 
 // Register services
 builder.Services.AddSingleton<ReportService>();
@@ -60,6 +68,9 @@ builder.Services.AddCors(options =>
               "http://example.com",
               "http://192.168.100.109:8081",
               "http://localhost:8081",
+              "http://localhost:3000",
+				"http://localhost:3001",
+              "https://localhost:3000",
               "http://localhost:5172")
             .AllowAnyHeader()
             .AllowAnyMethod()

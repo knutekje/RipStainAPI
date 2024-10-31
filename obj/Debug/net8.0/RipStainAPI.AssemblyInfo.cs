@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("c638b897-87b5-4ed0-a925-533823041248")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("RipStainAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02871dd10d02527e72286cb6577c904b3f4d0622")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c773e519b815526357b84d3be338b9eaf9418dc")]
 [assembly: System.Reflection.AssemblyProductAttribute("RipStainAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RipStainAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

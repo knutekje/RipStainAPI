@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using RipStainAPI.Models;
 using RipStainAPI.Services;
  
-[Authorize]
+//[Authorize]
 [ApiController]
 [Route("[controller]")]
 public class FoodItemController : ControllerBase {
